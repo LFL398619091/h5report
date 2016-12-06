@@ -1,0 +1,73 @@
+.number-wrapper{
+	position: relative;
+	min-height: 74px;
+	text-align: center;
+	font-size: 0;
+	background-color:#0f2244;
+	color: #fff;
+	-webkit-perspective: 1000px; /*父类容器中 perspective 子类允许透视*/
+	-moz-perspective: 1000px;
+	-ms-perspective: 1000px;
+	-o-perspective: 1000px;
+	perspective: 1000px;
+	transition: transform .5s ease-in-out;
+	-webkit-transition: transform .5s ease-in-out;
+	-moz-transition: transform .5s ease-in-out;
+	-ms-transition: transform .5s ease-in-out;
+	-o-transition: transform .5s ease-in-out;
+	-webkit-transform-style: preserve-3d; /*使其子类变换后得以保留 3d转换后的位置*/
+	-moz-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.front .changed, .back .changed {backface-visibility: hidden;transition: 0.6s ease-out;-webkit-transition: .6s ease-out; -webkit-transform-style: preserve-3d; -moz-transform-style: preserve-3d; -ms-transform-style: preserve-3d;-o-transform-style: preserve-3d;transform-style: preserve-3d;}
+.number-wrapper .back  .hover{transform: rotateX(0deg); -webkit-transform: rotateX(0deg);-moz-transform: rotateX(0deg);-ms-transform: rotateX(0deg);-o-transform: rotateX(0deg); z-index:2;}
+.number-wrapper .front  .hover{ transform: rotateX(180deg);-webkit-transform: rotateX(180deg);-moz-transform: rotateX(180deg);-ms-transform: rotateX(180deg);-o-transform: rotateX(180deg); z-index:1}
+span:last-child{
+	margin-right: 10px;
+}
+.number,.dot,.leftSiblingDot,.rightSiblingDot{
+	display: inline-block;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+	font-size: 32px;
+	line-height: 54px;
+	animation: turnCard 1s;
+	-webkit-animation: turnCard 1s;
+}
+.number,.leftSiblingDot,.rightSiblingDot{
+	width:36px;
+	height: 54px;
+	background-color: #205697;
+}
+.leftSiblingDot{
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.rightSiblingDot{
+	margin-left: 10px;
+}
+.number{
+	margin-left: 8px;	
+}
+.dot{
+	width: 6px;
+}
+@keyframes turnCard{
+	0% {
+		opacity: 0;
+	};
+	100% {
+		opacity: 1;
+	}
+}
+@-webkit-keyframes turnCard{
+	0% {
+		opacity: 0;
+	};
+	100% {
+		opacity: 1;
+	}
+}

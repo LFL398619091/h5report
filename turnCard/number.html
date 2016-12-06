@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>大屏数字</title>
+	<link type="text/css" rel="stylesheet" href="./turnCardNumber.css">
+</head>
+<body>
+	<input type="number" name="数字" id="number">
+	<div id="number-wrapper" class="number-wrapper"></div>
+</body>
+<script src="./turnCardNumber.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+	var number = document.getElementById('number');
+	number.addEventListener('blur', function () {
+		var num = number.value;
+		var numberWrapper = document.getElementById('number-wrapper');
+		initNumber(numberWrapper, num);
+	});
+</script>
+</html>
